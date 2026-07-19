@@ -1,0 +1,14 @@
+// code for the arduino projects i'll be doin
+Arduino in use - ELEGOO UNO R3
+sketch - refered to the code used in arduino IDE
+Sketch 1 - RGB lights
+ Description: basially using an rbg light and configuring the sketch so that the different colors interchange between each others 
+              creating a nive transition of colors on a singular light
+//defining the pins- pins are the numbered pins on the side of the arduino uno
+#define BLUE 3
+#define RED 4
+#define GREEN 6 
+
+void setup()
+{
+
