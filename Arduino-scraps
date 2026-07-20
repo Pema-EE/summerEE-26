@@ -1,0 +1,72 @@
+//so this is where ill put all of my code that I wrote to play around with the features on arduino. Most of these may be useless but i personally learnt fromthem so we good.
+
+LED lights blinking pattern
+   -description: basically after blinking my first LED light, i tried to make a sequence of light sort of a light show with three LED's.
+Here's the code written in the modified c++ used for arduinos:
+
+void setup() {
+  // put your setup code here, to run once:
+pinMode (13,OUTPUT);
+pinMode(12,OUTPUT);
+pinMode(8,OUTPUT);
+}
+
+void loop() {
+digitalWrite(13,HIGH);
+delay(1000);
+digitalWrite(13,LOW);
+delay(1000);
+digitalWrite(12,HIGH);
+delay(1000);
+digitalWrite(12,LOW);
+delay(1000);
+digitalWrite(8,HIGH);
+delay(1000);
+digitalWrite(8,LOW);
+delay(1000);
+digitalWrite(13,HIGH);
+digitalWrite(12,HIGH);
+digitalWrite(8,HIGH);
+delay(1500);
+digitalWrite(13,LOW);
+digitalWrite(12,LOW);
+digitalWrite(8,LOW);
+delay(500);
+digitalWrite(8,HIGH);
+delay(200);
+digitalWrite(8,LOW);
+delay(200);
+digitalWrite(8,HIGH);
+delay(200);
+digitalWrite(8,LOW);
+delay(200);
+digitalWrite(8,HIGH);
+delay(200);
+digitalWrite(8,LOW);
+delay(500);
+digitalWrite(12,HIGH);
+delay(200);
+digitalWrite(12,LOW);
+delay(200);
+digitalWrite(12,HIGH);
+delay(200);
+digitalWrite(12,LOW);
+delay(200);
+digitalWrite(12,HIGH);
+delay(200);
+digitalWrite(12,LOW);
+delay(500);
+digitalWrite(13,HIGH);
+delay(200);
+digitalWrite(13,LOW);
+delay(200);
+digitalWrite(13,HIGH);
+delay(200);
+digitalWrite(13,LOW);
+delay(200);
+digitalWrite(13,HIGH);
+delay(200);
+digitalWrite(13,LOW);
+delay(1000);
+}
+
