@@ -3,7 +3,7 @@
 LED lights blinking pattern
    -description: basically after blinking my first LED light, i tried to make a sequence of light sort of a light show with three LED's.
 Here's the code written in the modified c++ used for arduinos:
-
+CODE STARTS::
 void setup() {
   // put your setup code here, to run once:
 pinMode (13,OUTPUT);
@@ -69,4 +69,5 @@ delay(200);
 digitalWrite(13,LOW);
 delay(1000);
 }
+CODE ENDS//
 
