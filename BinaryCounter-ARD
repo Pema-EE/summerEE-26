@@ -1,0 +1,103 @@
+description: a binary counter counting up to 15 in binary through the use of led lights. 
+CODE STARTS;
+note: things after "//" are comments explaining certain things that i think may be confusing.
+
+//defining variables to make it easier to play around with the values
+int fst = 13; //left most number-- the 1's
+int snd = 12; //the 2's
+int trd = 8;  //the 4's
+int fth = 7;  //the 8's
+int wait=1000; //value for a delay
+
+
+void setup() {
+pinMode(fst,OUTPUT);
+pinMode(snd,OUTPUT);
+pinMode(trd,OUTPUT);
+pinMode(fth,OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+digitalWrite(fst,LOW);
+digitalWrite(snd,LOW);
+digitalWrite(trd,LOW);
+digitalWrite(fth,LOW);
+delay(wait);
+digitalWrite(fst,HIGH);
+digitalWrite(snd,LOW);
+digitalWrite(trd,LOW);
+digitalWrite(fth,LOW);
+delay(wait);
+digitalWrite(fst,LOW);
+digitalWrite(snd,HIGH);
+digitalWrite(trd,LOW);
+digitalWrite(fth,LOW);
+delay(wait);
+digitalWrite(fst,HIGH);
+digitalWrite(snd,HIGH);
+digitalWrite(trd,LOW);
+digitalWrite(fth,LOW);
+delay(wait);
+digitalWrite(fst,LOW);
+digitalWrite(snd,LOW);
+digitalWrite(trd,HIGH);
+digitalWrite(fth,LOW);
+delay(wait);
+digitalWrite(fst,HIGH);
+digitalWrite(snd,LOW);
+digitalWrite(trd,HIGH);
+digitalWrite(fth,LOW);
+delay(wait);
+digitalWrite(fst,LOW);
+digitalWrite(snd,HIGH);
+digitalWrite(trd,HIGH);
+digitalWrite(fth,LOW);
+delay(wait);
+digitalWrite(fst,HIGH);
+digitalWrite(snd,HIGH);
+digitalWrite(trd,HIGH);
+digitalWrite(fth,LOW);
+delay(wait);
+digitalWrite(fst,LOW);
+digitalWrite(snd,LOW);
+digitalWrite(trd,LOW);
+digitalWrite(fth,HIGH);
+delay(wait);
+digitalWrite(fst,HIGH);
+digitalWrite(snd,LOW);
+digitalWrite(trd,LOW);
+digitalWrite(fth,HIGH);
+delay(wait);
+digitalWrite(fst,LOW);
+digitalWrite(snd,HIGH);
+digitalWrite(trd,LOW);
+digitalWrite(fth,HIGH);
+delay(wait);
+digitalWrite(fst,HIGH);
+digitalWrite(snd,HIGH);
+digitalWrite(trd,LOW);
+digitalWrite(fth,HIGH);
+delay(wait);
+digitalWrite(fst,LOW);
+digitalWrite(snd,LOW);
+digitalWrite(trd,HIGH);
+digitalWrite(fth,HIGH);
+delay(wait);
+digitalWrite(fst,HIGH);
+digitalWrite(snd,LOW);
+digitalWrite(trd,HIGH);
+digitalWrite(fth,HIGH);
+delay(wait);
+digitalWrite(fst,LOW);
+digitalWrite(snd,HIGH);
+digitalWrite(trd,HIGH);
+digitalWrite(fth,HIGH);
+delay(wait);
+digitalWrite(fst,HIGH);
+digitalWrite(snd,HIGH);
+digitalWrite(trd,HIGH);
+digitalWrite(fth,HIGH);
+delay(2000);
+}
+CODE END//
