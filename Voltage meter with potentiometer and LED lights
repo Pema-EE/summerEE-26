@@ -1,0 +1,48 @@
+description: a simple volt meter useing 3 LED; green(0~1.7V), yellow(1.7~3.3v) and red(3.3~5V)  to display the voltage in a circuit as the potentiometer is adjusted.
+CODE STARTS:
+int readpin = A1;
+float pv = 0; //float cause the value is in decimals( pv = potentiometer voltage)
+int gled =8; /'/green led
+int yled = 12;  //yello led
+int rled = 13; //red led
+int readvalue=0; //another variable so we can convert given value from analogRead to vvolts
+
+
+void setup()
+{
+Serial.begin(9600); //setup for printing in serial monitor
+pinMode(readpin,INPUT);
+pinMode(gled,OUTPUT);
+pinMode(yled,OUTPUT);
+pinMode(rled,OUTPUT);
+}
+void loop()
+{
+readvalue = analogRead(readpin);
+pv = (5./1023.)*readvalue; //calculates the voltage from the value given in analogRead
+if (pv>0 && pv<1.7){
+  digitalWrite(gled,HIGH);
+  digitalWrite(yled,LOW);
+  digitalWrite(rled,LOW);
+  Serial.print("the voltage is ");
+  Serial.print(pv);
+Serial.println("Green-light");
+}
+if (pv>1.7 && pv<3.3){
+    digitalWrite(gled,LOW);
+  digitalWrite(yled,HIGH);
+  digitalWrite(rled,LOW);
+  Serial.print("the voltage is ");
+  Serial.print(pv);
+Serial.println("Green-light");
+}
+if (pv>3.3 && pv<5){
+    digitalWrite(gled,LOW);
+  digitalWrite(yled,LOW);
+  digitalWrite(rled,HIGH);
+  Serial.print("the voltage is ");
+  Serial.print(pv);
+Serial.println("  ::Red-light.  ");
+}
+delay(100);
+}
