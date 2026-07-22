@@ -2,13 +2,21 @@
 
 LED lights blinking pattern
    -description: basically after blinking my first LED light, i tried to make a sequence of light sort of a light show with three LED's.
+update-7/22-//implemented for loops and variables
 Here's the code written in the modified c++ used for arduinos:
 CODE STARTS::
+int firstled = 13;
+int secondled = 12;
+int thirdled = 8
+int j; //variable for "for" loops later
+int loops = 3;
+
+
 void setup() {
   // put your setup code here, to run once:
-pinMode (13,OUTPUT);
-pinMode(12,OUTPUT);
-pinMode(8,OUTPUT);
+pinMode (firstled,OUTPUT);
+pinMode(secondled,OUTPUT);
+pinMode(thirdled,OUTPUT);
 }
 
 void loop() {
@@ -32,42 +40,30 @@ digitalWrite(13,LOW);
 digitalWrite(12,LOW);
 digitalWrite(8,LOW);
 delay(500);
+//this loop makes it so that the code in the clause is repeated until
+j = loops which currently equals to 3 meaning the code will loop 
+three times before sequentially moving on.
+for (j=1;j<=loops;j+1)
+{
 digitalWrite(8,HIGH);
 delay(200);
 digitalWrite(8,LOW);
 delay(200);
-digitalWrite(8,HIGH);
-delay(200);
-digitalWrite(8,LOW);
-delay(200);
-digitalWrite(8,HIGH);
-delay(200);
-digitalWrite(8,LOW);
-delay(500);
+}
+for (j=1;j<=loops;j+1)
+{
 digitalWrite(12,HIGH);
 delay(200);
 digitalWrite(12,LOW);
 delay(200);
-digitalWrite(12,HIGH);
-delay(200);
-digitalWrite(12,LOW);
-delay(200);
-digitalWrite(12,HIGH);
-delay(200);
-digitalWrite(12,LOW);
-delay(500);
+}
+for (j=1;j<=loops;j+1)
+{
 digitalWrite(13,HIGH);
 delay(200);
 digitalWrite(13,LOW);
 delay(200);
-digitalWrite(13,HIGH);
-delay(200);
-digitalWrite(13,LOW);
-delay(200);
-digitalWrite(13,HIGH);
-delay(200);
-digitalWrite(13,LOW);
-delay(1000);
+}
 }
 CODE ENDS//
 
