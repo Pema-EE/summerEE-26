@@ -1,2 +1,2 @@
 # summerEE-26
-Everything i do this summer as a step to be "the" EE major
+Everything i do this summer as a step towards learning electronics.
