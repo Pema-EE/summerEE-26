@@ -1,0 +1,54 @@
+Description: this one seems kinda tough but in the end was pretty simple. THe hardest part being converting the string input into a int so that we cna actually direct that info to a pin. in this miniproject, i made it so that when you type a color in the serial monitor that color led blinks. FOr example if you clicked red, red led will blink and so on and so forth. THe main commands needed for this were Serial.readPrint and .trim() as this allowed us to have a concrete string value to then use a if statement to attach a integer number to another variable. overall this ones has been the most fun till now, hoping to learn more.
+
+
+
+String ledcolor;
+int redpin = 12;
+int bluepin = 7;
+int greenpin = 13;
+
+int target;
+String msg = "Which ledcolor would you like to blink?";
+String msg2 = "  LED is blinked";
+void setup(){
+pinMode(redpin,OUTPUT);
+pinMode(bluepin,OUTPUT);
+pinMode(greenpin,OUTPUT);
+Serial.begin(9600);
+}
+
+
+void loop(){
+    Serial.println(msg);
+ while (Serial.available()==0){}
+
+ 
+if (Serial.available()>0){
+  ledcolor = Serial.readString();
+ledcolor.trim();
+
+Serial.print(ledcolor);
+Serial.println(msg2);
+
+
+
+if (ledcolor == "green"){
+target = 13;
+}
+if (ledcolor == "red"){
+  target = 12;
+}
+if (ledcolor == "blue"){
+  target = 7;
+}
+}
+digitalWrite(target,HIGH);
+delay(500);
+digitalWrite(target,LOW);
+delay(500);
+
+
+}
+
+
+
