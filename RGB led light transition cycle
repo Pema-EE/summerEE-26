@@ -1,0 +1,90 @@
+// code for the arduino projects i'll be doin
+Arduino in use - ELEGOO UNO R3
+sketch - refered to the code used in arduino IDE
+Sketch 1 - RGB lights
+ Description: basially using an rbg light and configuring the sketch so that the different colors interchange between each others 
+              creating a nive transition of colors on a singular light. 
+//update now that i understand a bunch of the basics, this mini project felt nice to do, not worth calling it a project tho since it was kinda fast.
+as described above, this code makes it so that your rgb slowly fades from one color to the other cycling from red green to blue and everything in between to create a cool effect.
+
+CODE STARTS::
+
+
+String ledcolor;
+int redpin = 11;
+int bluepin = 9;
+int greenpin = 10;
+int r;
+int g;
+int b;
+int wait=30; //change how fast it fades from one to the other.
+String msg="what color do you want?";
+
+void setup(){
+pinMode(redpin,OUTPUT);
+pinMode(bluepin,OUTPUT);
+pinMode(greenpin,OUTPUT);
+Serial.begin(9600);
+}
+
+
+void loop(){
+  r=255; //predefined numbers so we can get started, also loops with the last while loop in this code to make the                 transition smooth.
+  g=0;
+  b=0;
+
+while (r>0){
+analogWrite(redpin,r);
+analogWrite(greenpin,g);
+analogWrite(bluepin,b);
+r=r-1;
+delay(wait);
+g=g+1;
+delay(wait);
+Serial.println(r);// displays the current level of led number for each of the three leds so you cna see how it transitions in numbers.
+Serial.println(g);
+Serial.println(b);
+}
+
+while (g>0){
+analogWrite(redpin,r);
+analogWrite(greenpin,g);
+analogWrite(bluepin,b);
+g=g-1;
+delay(wait);
+b=b+1;
+delay(wait);
+
+Serial.println(r);
+Serial.println(g);
+Serial.println(b);
+}
+while (b>0){
+analogWrite(redpin,r);
+analogWrite(greenpin,g);
+analogWrite(bluepin,b);
+b=b-1;
+delay(wait);
+r=r+1;
+delay(wait);
+Serial.println(r);
+Serial.println(g);
+Serial.println(b);
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
