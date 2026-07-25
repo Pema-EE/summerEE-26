@@ -1,0 +1,35 @@
+#description: day 5 of our journey with the arduino andd today its time for passive buzzers.
+i love the potentiometer btw cause its so good and easy to understand and feels cool cause its like ur controlling the circuit.
+  #this mini project we used a potentiometer with a pssive buzzer linearly adjusting the value from the potentiometer to the passive buzzer's buzz time in microseconds. Basically 0 on the p value means 60 microseconds of delay between each buzz while 1023 of pvalue is equal to 10000 microsecond( cool cause algebra utilized to find the formula; point slope form. W project.
+  CODE starts::
+int pvalue;
+int popin = A1;
+int buzzpin = 9;
+float microseconds;
+int wait = 1000;
+String printpval="your pvalue is :  ";
+String printmicroseconds="the delay is ";
+String printmicro="  microseconds long";
+void setup(){
+pinMode(popin,INPUT);
+pinMode(buzzpin,OUTPUT);
+Serial.begin(9600);
+}
+void loop(){
+  pvalue=analogRead(popin);
+
+microseconds= (9940./1023.)*pvalue+60; //point slope formula converting pvalue from the potentiometer into microseconds for the buzz to buzz.
+
+digitalWrite(buzzpin,HIGH);
+delayMicroseconds(microseconds);
+digitalWrite(buzzpin,LOW);
+delayMicroseconds(microseconds);
+Serial.print(printpval);
+Serial.println(pvalue);
+Serial.print(printmicroseconds);
+Serial.print(microseconds);
+Serial.println(printmicro);
+delay(wait);
+
+}
+CODE ends
