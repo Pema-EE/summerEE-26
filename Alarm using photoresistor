@@ -1,0 +1,29 @@
+description; i learned about photoresistors, so here a practice on it. in this mini projects, i made it so that if there is light the rate atwhih the passive buzzer buzzes decreases(goes up to 10000 microseconds as the light becomes absolute) and vice cerca. THis was made using an easily built circuit, analog pins and the good ol digitalWrite command.
+
+CODE STARTS::
+int voltpin = A1;
+int buzzpin =13;
+float microseconds;
+int pvalue;
+
+int wait=300;
+
+
+void setup(){
+pinMode(voltpin,INPUT);
+pinMode(buzzpin,OUTPUT);
+Serial.begin(9600);
+}
+void loop(){
+pvalue=analogRead(voltpin);
+microseconds=(9940./1023.)*pvalue;
+digitalWrite(buzzpin,HIGH);
+delayMicroseconds(microseconds);
+digitalWrite(buzzpin,LOW);
+delayMicroseconds(microseconds);
+
+Serial.println(pvalue);
+Serial.println(microseconds);
+
+}
+CODE ENDS;::
