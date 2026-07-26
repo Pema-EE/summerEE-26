@@ -1,0 +1,41 @@
+board used: arduino uno r3
+description: this one was really fun cause it really made me think about how the program is going to be executed by the computer and utilize the sequence in which it executes things to my advantage to create two buttons that dim the led or light up the led when continuously pressed. 
+
+CODE starts:
+int buttonreadlow=7;
+int buttonreadhigh=8;
+int ledpin = 11;
+int high;
+int low;
+int ledlevel=0;
+int dt=50;
+
+void setup(){
+pinMode(buttonreadlow,INPUT);
+pinMode(buttonreadhigh,INPUT);
+pinMode(ledpin,OUTPUT);
+Serial.begin(9600);
+}
+void loop(){
+high=digitalRead(buttonreadhigh); //reads the button that turns the brightness up
+low=digitalRead(buttonreadlow); ///reads the one that turns the brightness down.
+while(high==1){
+  ledlevel=ledlevel+1;//tones the brightness up by 1 for each "1" read by digital read for pin 8
+  analogWrite(ledpin,ledlevel);
+   delay(dt);
+  high=digitalRead(buttonreadhigh);
+   Serial.println(ledlevel);
+
+}
+while(low==1){
+  ledlevel=ledlevel-1; //tones the brightness down by 1 for each 1 read by digital read for pin 7
+  analogWrite(ledpin,ledlevel);
+  delay(dt);
+  low=digitalRead(buttonreadlow);
+  Serial.println(ledlevel);
+}
+Serial.println(ledlevel);
+delay(1000);  //remove this if you want it to run faster 
+}
+
+CODE ENDS
