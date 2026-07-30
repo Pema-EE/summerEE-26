@@ -1,0 +1,29 @@
+description: this one was basically using a toggle switch to swith the direction in which the step motor was turning.
+if it was initially turning in the clockwise direction, it would now turn to the counter clockwise direction with 
+the click of a button.
+
+CODE starts:
+#include <Stepper.h>
+int stepsperrevolution = 2048;
+Stepper mystepper(stepsperrevolution, 8,10,9,11);
+int motspeed = 5;
+int steps = 1;
+int buttonpin=2;
+int inputold=1;
+int inputnew;
+
+void setup(){
+mystepper.setSpeed(motspeed);
+pinMode(buttonpin,INPUT);
+digitalWrite(buttonpin,HIGH);
+}
+void loop(){
+inputnew=digitalRead(buttonpin);
+if (inputold == 1 && inputnew == 0){
+  steps=steps*(-1);
+
+}
+mystepper.step(steps);
+inputold=inputnew;
+}
+CODE ENDS
